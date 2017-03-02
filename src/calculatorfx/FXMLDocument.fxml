@@ -59,7 +59,7 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="multiplicar" mnemonicParsing="false" prefHeight="86.0" prefWidth="124.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button fx:id="multiplicar" mnemonicParsing="false" onAction="#eventomultiplicar" prefHeight="86.0" prefWidth="124.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font size="30.0" />
                </font>
@@ -69,7 +69,7 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="sumar" mnemonicParsing="false" prefHeight="89.0" prefWidth="124.0" text="+" GridPane.columnIndex="3">
+            <Button fx:id="sumar" mnemonicParsing="false" onAction="#eventoSumar" prefHeight="89.0" prefWidth="124.0" text="+" GridPane.columnIndex="3">
                <font>
                   <Font size="30.0" />
                </font>
@@ -79,7 +79,7 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="restar" mnemonicParsing="false" prefHeight="88.0" prefWidth="124.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button fx:id="restar" mnemonicParsing="false" onAction="#eventoRestar" prefHeight="88.0" prefWidth="124.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="30.0" />
                </font>
@@ -89,17 +89,17 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="igual" mnemonicParsing="false" prefHeight="89.0" prefWidth="124.0" text="=" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="igual" mnemonicParsing="false" onAction="#eventoBotonigual" prefHeight="89.0" prefWidth="124.0" text="=" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="limpiar" mnemonicParsing="false" prefHeight="88.0" prefWidth="124.0" text="CL" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Button fx:id="limpiar" mnemonicParsing="false" onAction="#eventoLimpiar" prefHeight="88.0" prefWidth="124.0" text="CL" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="dividir" mnemonicParsing="false" prefHeight="86.0" prefWidth="124.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button fx:id="dividir" mnemonicParsing="false" onAction="#eventoDividir" prefHeight="86.0" prefWidth="124.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font size="30.0" />
                </font>
