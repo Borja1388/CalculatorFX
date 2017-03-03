@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
  * @author admin
  */
 public class FXMLDocumentController implements Initializable {
-    
+
     @FXML
     private Label label;
     @FXML
@@ -58,84 +58,85 @@ public class FXMLDocumentController implements Initializable {
     private Button dividir;
     private String num1;
     private String num2;
+    private String num3;
     private String resultadoFinal;
     int operacion = -1;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
-    
+
     @FXML
     private void eventoBoton123(ActionEvent event) {
         if (event.getSource() == uno) {
             resultado.setText(resultado.getText() + "1");
-            
+
         } else if (event.getSource() == dos) {
             resultado.setText(resultado.getText() + "2");
-            
+
         } else if (event.getSource() == tres) {
             resultado.setText(resultado.getText() + "3");
-            
+
         }
-        
+
     }
-    
+
     @FXML
     private void eventoBoton4(ActionEvent event) {
         if (event.getSource() == cuatro) {
             resultado.setText(resultado.getText() + "4");
-            
+
         }
     }
-    
+
     @FXML
     private void eventoBoton5(ActionEvent event) {
         if (event.getSource() == cinco) {
             resultado.setText(resultado.getText() + "5");
-            
+
         }
     }
-    
+
     @FXML
     private void eventoBoton7(ActionEvent event) {
         if (event.getSource() == siete) {
             resultado.setText(resultado.getText() + "7");
-            
+
         }
     }
-    
+
     @FXML
     private void eventoBoton8(ActionEvent event) {
         if (event.getSource() == ocho) {
             resultado.setText(resultado.getText() + "8");
-            
+
         }
     }
-    
+
     @FXML
     private void eventoBoton9(ActionEvent event) {
         if (event.getSource() == nueve) {
             resultado.setText(resultado.getText() + "9");
-            
+
         }
     }
-    
+
     @FXML
     private void eventoBoton6(ActionEvent event) {
         if (event.getSource() == seis) {
             resultado.setText(resultado.getText() + "6");
-            
+
         }
     }
-    
+
     @FXML
     private void eventoBoton0(ActionEvent event) {
         if (event.getSource() == cero) {
             resultado.setText(resultado.getText() + "0");
-            
+
         }
     }
-    
+
     @FXML
     private void eventomultiplicar(ActionEvent event) {
         if (event.getSource() == multiplicar) {
@@ -144,17 +145,26 @@ public class FXMLDocumentController implements Initializable {
             operacion = 4;
         }
     }
-    
+
     @FXML
     private void eventoSumar(ActionEvent event) {
+        boolean respuesta = false;
+
         if (event.getSource() == sumar) {
-            num1 = resultado.getText();
-            resultado.setText(" ");
-            operacion = 1;
+            if (respuesta == false) {
+                num1 = resultado.getText();
+                resultado.setText(" ");
+                operacion = 1;
+                respuesta = true;
+            }else{
+                num3=resultado.getText();
+                resultado.setText(" ");
+                operacion=1;
+            }
         }
-        
+
     }
-    
+
     @FXML
     private void eventoRestar(ActionEvent event) {
         if (event.getSource() == restar) {
@@ -163,7 +173,7 @@ public class FXMLDocumentController implements Initializable {
             operacion = 2;
         }
     }
-    
+
     @FXML
     private void eventoDividir(ActionEvent event) {
         if (event.getSource() == dividir) {
@@ -172,9 +182,10 @@ public class FXMLDocumentController implements Initializable {
             operacion = 3;
         }
     }
-    
+
     @FXML
     private void eventoBotonigual(ActionEvent event) {
+
         num2 = resultado.getText();
         resultado.setText(" ");
         switch (operacion) {
@@ -184,6 +195,7 @@ public class FXMLDocumentController implements Initializable {
                 float resultadoFinal1 = numI + numI2;
                 resultadoFinal = String.valueOf(resultadoFinal1);
                 resultado.setText(resultadoFinal);
+
                 break;
             case 2:
                 numI = Float.parseFloat(num1);
@@ -202,7 +214,7 @@ public class FXMLDocumentController implements Initializable {
                 } else {
                     resultado.setText("E");
                 }
-                
+
                 break;
             case 4:
                 numI = Float.parseFloat(num1);
@@ -211,14 +223,14 @@ public class FXMLDocumentController implements Initializable {
                 resultadoFinal = String.valueOf(resultadoFinal1);
                 resultado.setText(resultadoFinal);
                 break;
-            
+
         }
-        
+
     }
-    
+
     @FXML
     private void eventoLimpiar(ActionEvent event) {
         resultado.setText(" ");
     }
-    
+
 }
