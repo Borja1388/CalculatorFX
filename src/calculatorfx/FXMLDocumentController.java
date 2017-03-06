@@ -61,6 +61,8 @@ public class FXMLDocumentController implements Initializable {
     private String num3;
     private String cadena;
     private String resultadoFinal;
+    String cadena2 = "";
+    int contador = 1;
     int operacion = -1;
     @FXML
     private TextField operaciones;
@@ -72,7 +74,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void eventoBoton123(ActionEvent event) {
         if (event.getSource() == uno) {
-            num1=resultado.getText();
+            num1 = resultado.getText();
             resultado.setText(resultado.getText() + "1");
 
         } else if (event.getSource() == dos) {
@@ -143,43 +145,52 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void eventomultiplicar(ActionEvent event) {
-        if (event.getSource() == multiplicar) {
-            
-        }
+
     }
 
     @FXML
     private void eventoSumar(ActionEvent event) {
-        float resultadoFinal1 = 0;
-        if(event.getSource()==sumar){
-            num1=resultado.getText();
-            
-            operaciones.setText(num1 + "+");
-            resultado.setText("");
-            float num=Float.parseFloat(num1);
-            resultadoFinal1= resultadoFinal1 + num;
-            num=0;
-            resultadoFinal=String.valueOf(resultadoFinal1);
-            
-            resultado.setText(resultadoFinal);
-        }
+        float nuM1;
+        float nuM;
+        
+        switch (contador) {
+            case 1:
+                num1 = resultado.getText();
+                cadena = num1 + "+";
+                operaciones.setText(cadena);
+                resultado.setText("");
+                contador++;
+                break;
 
-       
+            case 2:
+                num2 = resultado.getText();
+                cadena += num2;
+                operaciones.setText(cadena);
+                resultado.setText("");
+                contador++;
+                break;
+            case 3:
+                nuM = Float.parseFloat(num1);
+                nuM1 = Float.parseFloat(num2);
+                float resultado1 = nuM + nuM1;
+                resultadoFinal = String.valueOf(resultado1);
+                resultado.setText(resultadoFinal);
+                contador = 0;
+                num1 = "";
+                num2 = "";
+                break;
+        }
 
     }
 
     @FXML
     private void eventoRestar(ActionEvent event) {
-        if (event.getSource() == restar) {
-            
-        }
+
     }
 
     @FXML
     private void eventoDividir(ActionEvent event) {
-        if (event.getSource() == dividir) {
-            ;
-        }
+
     }
 
     @FXML
