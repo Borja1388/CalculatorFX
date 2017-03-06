@@ -59,8 +59,11 @@ public class FXMLDocumentController implements Initializable {
     private String num1;
     private String num2;
     private String num3;
+    private String cadena;
     private String resultadoFinal;
     int operacion = -1;
+    @FXML
+    private TextField operaciones;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -69,6 +72,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void eventoBoton123(ActionEvent event) {
         if (event.getSource() == uno) {
+            num1=resultado.getText();
             resultado.setText(resultado.getText() + "1");
 
         } else if (event.getSource() == dos) {
@@ -140,46 +144,41 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void eventomultiplicar(ActionEvent event) {
         if (event.getSource() == multiplicar) {
-            num1 = resultado.getText();
-            resultado.setText(" ");
-            operacion = 4;
+            
         }
     }
 
     @FXML
     private void eventoSumar(ActionEvent event) {
-        boolean respuesta = false;
-
-        if (event.getSource() == sumar) {
-            if (respuesta == false) {
-                num1 = resultado.getText();
-                resultado.setText(" ");
-                operacion = 1;
-                respuesta = true;
-            }else{
-                num3=resultado.getText();
-                resultado.setText(" ");
-                operacion=1;
-            }
+        float resultadoFinal1 = 0;
+        if(event.getSource()==sumar){
+            num1=resultado.getText();
+            
+            operaciones.setText(num1 + "+");
+            resultado.setText("");
+            float num=Float.parseFloat(num1);
+            resultadoFinal1= resultadoFinal1 + num;
+            num=0;
+            resultadoFinal=String.valueOf(resultadoFinal1);
+            
+            resultado.setText(resultadoFinal);
         }
+
+       
 
     }
 
     @FXML
     private void eventoRestar(ActionEvent event) {
         if (event.getSource() == restar) {
-            num1 = resultado.getText();
-            resultado.setText(" ");
-            operacion = 2;
+            
         }
     }
 
     @FXML
     private void eventoDividir(ActionEvent event) {
         if (event.getSource() == dividir) {
-            num1 = resultado.getText();
-            resultado.setText(" ");
-            operacion = 3;
+            ;
         }
     }
 
