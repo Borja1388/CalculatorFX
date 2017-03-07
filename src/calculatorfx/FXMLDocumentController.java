@@ -74,7 +74,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void eventoBoton123(ActionEvent event) {
         if (event.getSource() == uno) {
-            num1 = resultado.getText();
+            
             resultado.setText(resultado.getText() + "1");
 
         } else if (event.getSource() == dos) {
@@ -150,9 +150,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void eventoSumar(ActionEvent event) {
-        float nuM1;
-        float nuM;
-        
+
         switch (contador) {
             case 1:
                 num1 = resultado.getText();
@@ -170,14 +168,15 @@ public class FXMLDocumentController implements Initializable {
                 contador++;
                 break;
             case 3:
-                nuM = Float.parseFloat(num1);
-                nuM1 = Float.parseFloat(num2);
-                float resultado1 = nuM + nuM1;
+                float nuM = Float.parseFloat(num1);
+                float nuM1 = Float.parseFloat(num2);
+                float resultado1 = (float) nuM + nuM1;
                 resultadoFinal = String.valueOf(resultado1);
                 resultado.setText(resultadoFinal);
                 contador = 0;
                 num1 = "";
                 num2 = "";
+                
                 break;
         }
 
@@ -241,6 +240,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void eventoLimpiar(ActionEvent event) {
         resultado.setText(" ");
+        operaciones.setText(" ");
     }
 
 }
