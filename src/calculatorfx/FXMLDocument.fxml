@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculatorfx.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="648.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculatorfx.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <GridPane layoutY="150.0" prefHeight="346.0" prefWidth="496.0">
@@ -26,7 +26,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="uno" mnemonicParsing="false" onAction="#eventoBoton123" prefHeight="90.0" prefWidth="127.0" stylesheets="@../../../../../Desktop/CSSJava2.css" text="1">
+            <Button fx:id="uno" mnemonicParsing="false" onAction="#eventoBoton123" prefHeight="102.0" prefWidth="124.0" stylesheets="@../../../../../Desktop/CSSJava2.css" text="1">
                <font>
                   <Font size="30.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="cuatro" mnemonicParsing="false" onAction="#eventoBoton4" prefHeight="86.0" prefWidth="124.0" text="4" GridPane.rowIndex="1">
+            <Button fx:id="cuatro" mnemonicParsing="false" onAction="#eventoBoton4" prefHeight="93.0" prefWidth="124.0" text="4" GridPane.rowIndex="1">
                <font>
                   <Font size="30.0" />
                </font>
@@ -114,9 +114,7 @@
          </font>
       </TextField>
       <TextField fx:id="operaciones" alignment="CENTER_RIGHT" layoutY="-1.0" prefHeight="65.0" prefWidth="496.0" stylesheets="@../../../../../Desktop/CSSJava.css" />
+      <Button fx:id="historico" layoutX="1.0" layoutY="496.0" mnemonicParsing="false" onAction="#clicarHistorico" prefHeight="25.0" prefWidth="497.0" text="Historico" />
+      <TextField fx:id="historial" layoutY="521.0" prefHeight="128.0" prefWidth="497.0" />
     </children>
-   <stylesheets>
-      <URL value="@CSSJava2.css" />
-      <URL value="@CSSJava.css" />
-   </stylesheets>
 </AnchorPane>

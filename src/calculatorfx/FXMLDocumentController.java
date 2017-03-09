@@ -6,6 +6,8 @@
 package calculatorfx;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,9 +64,14 @@ public class FXMLDocumentController implements Initializable {
     private String simbolo="";
     private int count;
     private boolean operacionApretada = false;
+    private List<String> numeros= new ArrayList<>();
     int operacion = -1;
     @FXML
     private TextField operaciones;
+    @FXML
+    private Button historico;
+    @FXML
+    private TextField historial;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -180,7 +187,7 @@ public class FXMLDocumentController implements Initializable {
         num1 = Double.parseDouble(resultado.getText());
         cadena = cadena + resultado.getText() + "*";
         operaciones.setText(cadena);
-        simbolo = "*";
+        total=num1;
         if (simbolo.equalsIgnoreCase("+")) {
             total = total + num1;
         } else if (simbolo.equalsIgnoreCase("-")) {
@@ -190,7 +197,7 @@ public class FXMLDocumentController implements Initializable {
         } else if (simbolo.equalsIgnoreCase("/")) {
             total = total / num1;
         }
-
+        simbolo = "*";
         resultado.setText(total + "");
         operacionApretada = true;
         count++;
@@ -203,7 +210,10 @@ public class FXMLDocumentController implements Initializable {
         num1 = Double.parseDouble(resultado.getText());
         cadena = cadena + resultado.getText() + "+";
         operaciones.setText(cadena);
-        simbolo = "+";
+        if(count==0){
+         total=total+num1;   
+        }
+        
         if (simbolo.equalsIgnoreCase("+")) {
             total = total + num1;
         } else if (simbolo.equalsIgnoreCase("-")) {
@@ -213,7 +223,7 @@ public class FXMLDocumentController implements Initializable {
         } else if (simbolo.equalsIgnoreCase("/")) {
             total = total / num1;
         }
-
+        simbolo = "+";
         resultado.setText(total + "");
         operacionApretada = true;
         count++;
@@ -227,7 +237,7 @@ public class FXMLDocumentController implements Initializable {
             num1 = Double.parseDouble(resultado.getText());
             cadena = cadena + resultado.getText() + "-";
             operaciones.setText(cadena);
-             simbolo = "-";
+             total=num1;
             if (simbolo.equalsIgnoreCase("+")) {
                 total = total + num1;
             } else if (simbolo.equalsIgnoreCase("-")) {
@@ -258,6 +268,7 @@ public class FXMLDocumentController implements Initializable {
             operacionApretada = true;
 
         }
+        simbolo = "-";
         count++;
         
     }
@@ -267,7 +278,7 @@ public class FXMLDocumentController implements Initializable {
         num1 = Double.parseDouble(resultado.getText());
         cadena = cadena + resultado.getText() + "/";
         operaciones.setText(cadena);
-        simbolo = "/";
+        total=num1;
         if (simbolo.equalsIgnoreCase("+")) {
             total = total + num1;
         } else if (simbolo.equalsIgnoreCase("-")) {
@@ -277,6 +288,7 @@ public class FXMLDocumentController implements Initializable {
         } else if (simbolo.equalsIgnoreCase("/")) {
             total = total / num1;
         }
+        simbolo = "/";
 
         resultado.setText(total + "");
         operacionApretada = true;
@@ -287,23 +299,11 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void eventoBotonigual(ActionEvent event) {
-
-        switch (operacion) {
-            case 1:
-
-                break;
-            case 2:
-
-                break;
-            case 3:
-
-                break;
-            case 4:
-
-                break;
-
-        }
-        count = 0;
+        resultado.setText(total + "");
+        numeros.add(cadena);
+        operaciones.setText("");
+        
+        
 
     }
 
@@ -313,6 +313,16 @@ public class FXMLDocumentController implements Initializable {
         operaciones.setText(" ");
         count = 0;
         simbolo="";
+        cadena="";
+        total=0;
+    }
+
+    @FXML
+    private void clicarHistorico(ActionEvent event) {
+        for (int i = 0; i < numeros.size(); i++) {
+            historial.setText(numeros+ "=" + total);
+            
+        }
     }
 
 }
