@@ -25,6 +25,9 @@ public class CalculatorFX extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("Calculadora"); //TITULO DE LA APLICACION
+        stage.setResizable(false); //EVITAR QUE SE PUEDA MODIFICAR EL TAMAÑO DE LA VENTANA
+        stage.sizeToScene(); // AJUSTAR LA VENTANA AL TAMAÑO DEL PANE (PARA QUE NO HAYA PADING EN LA VENTANA)
     }
 
     /**

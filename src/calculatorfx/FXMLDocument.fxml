@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -24,7 +26,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="uno" mnemonicParsing="false" onAction="#eventoBoton123" prefHeight="90.0" prefWidth="127.0" text="1">
+            <Button fx:id="uno" mnemonicParsing="false" onAction="#eventoBoton123" prefHeight="90.0" prefWidth="127.0" stylesheets="@../../../../../Desktop/CSSJava2.css" text="1">
                <font>
                   <Font size="30.0" />
                </font>
@@ -79,7 +81,7 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="restar" mnemonicParsing="false" onAction="#eventoRestar" prefHeight="88.0" prefWidth="124.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button fx:id="restar" mnemonicParsing="false" onAction="#eventoRestar" prefHeight="88.0" prefWidth="124.0" styleClass="background" stylesheets="@../../../../../Desktop/CSSJava2.css" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="30.0" />
                </font>
@@ -106,11 +108,15 @@
             </Button>
          </children>
       </GridPane>
-      <TextField fx:id="resultado" alignment="CENTER_RIGHT" layoutY="64.0" prefHeight="87.0" prefWidth="496.0">
+      <TextField fx:id="resultado" alignment="CENTER_RIGHT" layoutY="64.0" prefHeight="87.0" prefWidth="496.0" stylesheets="@../../../../../Desktop/CSSJava2.css">
          <font>
             <Font size="40.0" />
          </font>
       </TextField>
-      <TextField fx:id="operaciones" alignment="CENTER_RIGHT" layoutY="-1.0" prefHeight="65.0" prefWidth="496.0" />
+      <TextField fx:id="operaciones" alignment="CENTER_RIGHT" layoutY="-1.0" prefHeight="65.0" prefWidth="496.0" stylesheets="@../../../../../Desktop/CSSJava.css" />
     </children>
+   <stylesheets>
+      <URL value="@CSSJava2.css" />
+      <URL value="@CSSJava.css" />
+   </stylesheets>
 </AnchorPane>
